@@ -1,4 +1,5 @@
 package org.hyperledger.bpa.impl.rules;
+
 import io.micronaut.context.ApplicationContext;
 import lombok.Builder;
 import lombok.Data;

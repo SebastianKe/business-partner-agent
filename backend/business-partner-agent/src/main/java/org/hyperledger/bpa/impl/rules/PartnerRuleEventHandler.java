@@ -21,48 +21,49 @@ public class PartnerRuleEventHandler {
     @Inject
     RulesService rs;
 
-    @Inject
-    ApplicationContext appCtx;
+    // @Inject
+    // ApplicationContext appCtx;
 
     @EventListener
     @Async
-    public void onPartnerAddedEvent (PartnerAddedEvent event) {
-        log.debug("detected {}", event.getClass());
-    }
-
-    @EventListener
-    @Async
-    public void onPartnerAcceptedEvent (PartnerAcceptedEvent event) {
+    public void onPartnerAddedEvent(PartnerAddedEvent event) {
         log.debug("detected {}", event.getClass());
         runRule(event);
     }
 
     @EventListener
     @Async
-    public void onPartnerRemovedEvent (PartnerRemovedEvent event) {
+    public void onPartnerAcceptedEvent(PartnerAcceptedEvent event) {
+        log.debug("detected {}", event.getClass());
+        runRule(event);
+    }
+
+    @EventListener
+    @Async
+    public void onPartnerRemovedEvent(PartnerRemovedEvent event) {
         log.debug("detected {}", event.getClass());
     }
 
     @EventListener
     @Async
-    public void onPartnerRequestReceivedEvent (PartnerRequestReceivedEvent event) {
+    public void onPartnerRequestReceivedEvent(PartnerRequestReceivedEvent event) {
         log.debug("detected {}", event.getClass());
     }
 
     @EventListener
     @Async
-    public void onPartnerRequestCompletedEvent (PartnerRequestCompletedEvent event) {
+    public void onPartnerRequestCompletedEvent(PartnerRequestCompletedEvent event) {
         log.debug("detected {}", event.getClass());
     }
 
-    public void runRule (Object event) {
+    public void runRule(Event event) {
         List<RulesData> rules = rs.getAll();
         log.debug("Running event against {} active rules", rules.size());
         rules.parallelStream().forEach(r -> {
-            // if (r.getTrigger().apply(event)) {
-            //    log.debug("Run rule with id: {}", r.getRuleId());
-            //    r.getAction().run(event);
-            //}
+            if (r.getTrigger().apply(event)) {
+                log.debug("Run rule with event id: {}", r.getRuleId());
+                r.getAction().run(null);
+            }
         });
     }
 }
