@@ -306,7 +306,9 @@
       "invitationURL": "Einladung URL",
       "useOOB": "Out of Band verwenden",
       "usePublicDid": "Öffentliche DID verwenden",
-      "eventSuccessCreatePartnerInvite": "Einladung erfolgreich erstellt"
+      "eventSuccessCreatePartnerInvite": "Einladung erfolgreich erstellt",
+      "eventSuccessCopy": "Einladung kopiert",
+      "eventErrorCopy": "Einladung kann nicht kopiert werden"
     },
     "proofTemplate": {
       "title": "Nachweisvorlagen",
@@ -400,6 +402,7 @@
     "presentationRecord": {
       "role": "Rolle",
       "state": "Zustand",
+      "type": "Typ",
       "requestName": "Name der Anfrage",
       "requestContent": "Inhalt der Anfrage",
       "issuer": "Aussteller",
@@ -536,7 +539,7 @@
       "eventSuccess": "Neue Berechtigungsnachweisdefinition hinzugefügt"
     },
     "createSchema": {
-      "title": "Schema erstellen",
+      "title": "Indy Schema erstellen",
       "schemaInformation": "Schema Information",
       "labelSchema": "Schema Label",
       "labelName": "Schema Name",

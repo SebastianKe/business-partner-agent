@@ -306,7 +306,9 @@
       "invitationURL": "Send the QR code or the equivalent URL below as the connection invitation",
       "useOOB": "Out of Band",
       "usePublicDid": "Use Public DID",
-      "eventSuccessCreatePartnerInvite": "Partner Invitation created successfully"
+      "eventSuccessCreatePartnerInvite": "Partner Invitation created successfully",
+      "eventSuccessCopy": "Invitation copied",
+      "eventErrorCopy": "Can't copy Invitation"
     },
     "proofTemplate": {
       "title": "Proof Templates",
@@ -400,6 +402,7 @@
     "presentationRecord": {
       "role": "Role",
       "state": "State",
+      "type": "Type",
       "requestName": "Request Name",
       "requestContent": "Request Content",
       "issuer": "Issuer",
@@ -536,7 +539,7 @@
       "eventSuccess": "New credential definition added"
     },
     "createSchema": {
-      "title": "Create Schema",
+      "title": "Create Indy Schema",
       "schemaInformation": "Schema Information",
       "labelSchema": "Schema Label",
       "labelName": "Schema Name",
